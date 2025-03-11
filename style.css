@@ -1,0 +1,355 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Estilo do Cabeçalho (Navbar) */
+.navbar-container {
+  position: relative;
+  background-color: #2a3d56; /* Cor de fundo escura */
+  width: 100%;
+  z-index: 999;
+}
+
+.scrolling-header {
+  background-color: #333; /* Cor de fundo para o texto rolando */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.2em;
+  position: relative;
+  width: 100%;
+  z-index: 1; /* Ficar acima da navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Fio de sombra no fundo */
+  overflow: hidden; /* Evitar o texto sair do container */
+}
+
+.scrolling-header p {
+  margin: 0;
+  white-space: nowrap;
+  animation: scroll-text 20s linear infinite; /* Animação de rolagem */
+}
+
+/* Animação de rolagem para o texto */
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%); /* Começa fora da tela à direita */
+  }
+  100% {
+    transform: translateX(-100%); /* Vai até fora da tela à esquerda */
+  }
+}
+
+/* Estilo da Navbar */
+.navbar-container {
+  background-color: #ffffff; /* Cor de fundo da navbar */
+  width: 100%;
+  z-index: 2; /* Fica acima do texto rolando */
+  position: relative;
+  padding-top: 20px; /* Espaço extra para não sobrepor o texto rolando */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.navbar-items {
+  list-style-type: none;
+  display: flex;
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+.navbar-items li {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.navbar-items a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-items a:hover {
+  color: #ff9800; /* Cor de destaque ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar-items {
+    flex-direction: column; /* Coloca os itens em coluna em telas pequenas */
+    gap: 10px; /* Reduzir o espaçamento entre os itens */
+  }
+
+  .navbar-items a {
+    font-size: 1.2em; /* Ajustar o tamanho da fonte em dispositivos menores */
+  }
+
+  .logo {
+    max-width: 120px; /* Reduz o tamanho do logo em telas pequenas */
+  }
+
+  .scrolling-header {
+    font-size: 1em; /* Ajusta o tamanho do texto rolando em dispositivos móveis */
+  }
+}
+
+/* Banner Principal */
+.main-banner {
+  background: url("img/banner-home.jpg") center/cover;
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+  transition: all 1.5s ease;
+}
+
+.main-banner:hover {
+  color: #000000;
+}
+
+.main-banner h1 {
+  font-size: 2.5em;
+}
+
+.main-banner p {
+  font-size: 1.2em;
+  margin: 10px 0 20px;
+}
+
+.botao-whatsapp {
+  display: inline-block;
+  padding: 9px 20px;
+  background-color: #ff9800; /* Verde do WhatsApp */
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  transition: 0.9s;
+}
+
+.botao-whatsapp:hover {
+  background-color: #070400; /* Verde mais escuro no hover */
+  transform: scale(1.05);
+}
+
+/* Seção de Serviços */
+.services-container,
+.pricing-container,
+.contact-container {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services-container h2,
+.pricing-container h2,
+.contact-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.services-container ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Para que os itens possam quebrar linha em telas menores */
+}
+
+.services-container li {
+  list-style: none;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 10px; /* Adiciona um pouco de margem entre os itens */
+}
+
+.services-container i {
+  font-size: 2em;
+  padding: 15px;
+  color: #ff9800;
+}
+
+/* div filosofia */
+.filosif-container {
+  background-color: #f7f7f7; /* Cor de fundo suave */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 30px; /* Espaçamento interno */
+  max-width: 800px; /* Limitar a largura */
+  margin: 50px auto; /* Centralizar na página */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  text-align: center; /* Centralizar o texto */
+}
+
+.filosif-container img {
+  max-width: 150px; /* Limitar o tamanho da imagem */
+  margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+
+.filosif-container h2 {
+  font-size: 2em; /* Tamanho grande para o título */
+  color: #333; /* Cor escura para o título */
+  font-weight: 600; /* Negrito para destaque */
+  margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.filosif-container p {
+  font-size: 1.1em; /* Tamanho da fonte do parágrafo */
+  color: #555; /* Cor do texto mais suave */
+  line-height: 1.6; /* Aumentar a altura da linha para melhorar a leitura */
+  margin-bottom: 0;
+  text-align: justify; /* Justificar o texto */
+}
+
+/* Botão na seção de preços */
+.botao-whatsapp {
+  display: inline-block;
+  padding: 9px 20px;
+  background-color: #ff9800; /* Verde do WhatsApp */
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  transition: 0.9s;
+}
+
+.botao-whatsapp:hover {
+  background-color: #070400; /* Verde mais escuro no hover */
+  transform: scale(1.05);
+}
+
+/* Formulário */
+.contact-container form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-container input[type="submit"] {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo do Rodapé */
+footer {
+  background-color: #000000; /* Cor de fundo escura */
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Ícones das redes sociais */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  background-color: #ff9800; /* Cor de fundo dos ícones */
+  color: white;
+  font-size: 1.5em;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background-color: #e68900;
+  transform: scale(1.1);
+}
+
+/* Informações do rodapé */
+.footer-info p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+/* Texto de direitos autorais */
+.footer-copy {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .services-container ul {
+    flex-direction: column; /* Empilha os itens verticalmente */
+  }
+
+  .main-banner h1 {
+    font-size: 2em;
+  }
+
+  .main-banner p {
+    font-size: 1em;
+  }
+
+  .contact-container form input,
+  .contact-container form textarea {
+    font-size: 1em; /* Ajusta o tamanho da fonte */
+  }
+
+  .botao-whatsapp {
+    width: 100%; /* Botão ocupa toda a largura em telas menores */
+    padding: 12px;
+    font-size: 1.1em;
+  }
+}
